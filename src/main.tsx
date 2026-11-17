@@ -7,7 +7,8 @@ import './styles/global.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* BASE_URL is "/" locally and "/hrdynax/" on GitHub Pages (set by --base in the deploy workflow). */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <AppProvider>
         <App />
       </AppProvider>
